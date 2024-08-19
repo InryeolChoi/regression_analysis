@@ -1,3 +1,15 @@
+rm(list=ls())
+graph_new = function() {
+  os = Sys.info()["sysname"]
+  if (os == 'Windows') {
+    windows()
+  } else if (os == 'Darwin') {
+    quartz()
+  } else if (os == 'Linux') {
+    x11()
+  }
+}
+
 # 유명한 데이터셋 'mtcars' 가져오기
 data(mtcars)
 
