@@ -1,4 +1,4 @@
-# 4.7
+# 4.7 ----
 rm(list=ls())
 data = read.table("../../dataset/P088.txt", header=T, sep='\t')
 str(data)
@@ -20,4 +20,13 @@ cor(data[, 2:8])
 graph_new()
 pairs(data[, 2:8])
 
-## (c) ----
+## (e) ----
+fit = lm(formula = Sales ~ Age + HS + Income + Black + Female + Price,
+         data = data)
+summary(fit)
+
+## 4.11 ----
+rm(list=ls())
+fit_H0 = lm(formula = Sales ~ Age + HS + Income + Black + Female + Price, data = data)
+fit_H1 = lm(formula)
+
